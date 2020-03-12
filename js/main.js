@@ -1,13 +1,13 @@
-window.onload = function() {
+window.onload = function () {
 
     // 'use strict';
-    
+
     // let dude = {
     //     name: 'xxx',
     //     age: 30,
     //     isDumbass: true,
     // };
-    
+
     // console.log(dude.name);
 
     // let arr = ['xxx.png', 'yyy.png', 'sss.jpeg'];
@@ -25,8 +25,8 @@ window.onload = function() {
     // click.addEventListener('mouseout', function() {
     //     div.innerHTML = 'YYY';
     // });
-    
-  
+
+
 
     // let num = 50;
 
@@ -40,29 +40,38 @@ window.onload = function() {
 
     // (num < 55) ? alert('No!') : alert('YEEEEEEEEE');
 
-    let money = +prompt('Month budget?');
-    let time = +prompt('Enter date YYYY-MM-DD');
+    let money = +prompt('Ваш бюджет на месяц?');
+    let time = +prompt('Введите дату в формате YYYY-MM-DD');
     let value;
 
     let appData = {
         budget: money,
         timeData: time,
-        expenses: {
-            key: value,
-        },
+        expenses: {},
         optionalExpenses: {},
         income: [],
         saving: false,
     };
 
-    let shoping = prompt('Expenses');
-    let howMach = +prompt('How much?');
 
-    appData.expenses.key = shoping;
-    appData.expenses.value = howMach;
 
-    alert(appData.expenses.key);
-    alert(appData.expenses.value);
+    for (let i = 0; i < 2; i++) {
+
+        let a = prompt('Введите обязательную статью расходов в этом месяце');
+        let b = +prompt('Во сколько обойдется?');
+
+        if ((typeof(a) === 'string') && (a != null) && (b != null) && (a != '') && (b != '')) {
+            console.log(6666);
+            
+            appData.expenses[a] = b;
+        }
+
+    }
+
+
+
+    alert('Статья расходов - ' + appData.expenses.a);
+    alert('Будет стоить - ' + appData.expenses.b);
 
 };
 
