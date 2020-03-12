@@ -41,7 +41,7 @@ window.onload = function () {
     // (num < 55) ? alert('No!') : alert('YEEEEEEEEE');
 
     let money = +prompt('Ваш бюджет на месяц?');
-    let time = +prompt('Введите дату в формате YYYY-MM-DD');
+    let time = prompt('Введите дату в формате YYYY-MM-DD');
     let value;
 
     let appData = {
@@ -60,18 +60,33 @@ window.onload = function () {
         let a = prompt('Введите обязательную статью расходов в этом месяце');
         let b = +prompt('Во сколько обойдется?');
 
-        if ((typeof(a) === 'string') && (a != null) && (b != null) && (a != '') && (b != '')) {
-            console.log(6666);
-            
+        if ((typeof(a) === 'string') && (a != null) && (b != null) && (a != '') && (b != '')) {            
             appData.expenses[a] = b;
         }
 
     }
 
+    appData.moneyPerDay = appData.budget / 30;
+
+    alert('Бюджет на день - ' + appData.moneyPerDay);
+
+    if (appData.moneyPerDay < 100) {
+        console.log('Нищеброд 80 лвл');        
+    } else if ((appData.moneyPerDay > 100) && (appData.moneyPerDay < 200)) {
+        console.log('Россиянец');
+    } else {
+        console.log('Буржуй');        
+    };
+
+    console.log(appData);
+    
 
 
-    alert('Статья расходов - ' + appData.expenses.a);
-    alert('Будет стоить - ' + appData.expenses.b);
+
+
+
+    // alert('Статья расходов - ' + appData.expenses.a);
+    // alert('Будет стоить - ' + appData.expenses.b);
 
 };
 
