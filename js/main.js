@@ -40,6 +40,14 @@ window.onload = function () {
 
     // (num < 55) ? alert('No!') : alert('YEEEEEEEEE');
 
+
+    // -------------------------------------------------------------------------------------------------------------------- //
+
+
+
+
+
+
     let money = +prompt('Ваш бюджет на месяц?');
     let time = prompt('Введите дату в формате YYYY-MM-DD');
     let value;
@@ -50,7 +58,7 @@ window.onload = function () {
         expenses: {},
         optionalExpenses: {},
         income: [],
-        saving: false,
+        saving: true,
     };
 
 
@@ -60,33 +68,80 @@ window.onload = function () {
         let a = prompt('Введите обязательную статью расходов в этом месяце');
         let b = +prompt('Во сколько обойдется?');
 
-        if ((typeof(a) === 'string') && (a != null) && (b != null) && (a != '') && (b != '')) {            
+        if ((typeof (a) === 'string') && (a != null) && (b != null) && (a != '') && (b != '')) {
             appData.expenses[a] = b;
         }
 
+    }    
+
+    // console.log(appData);
+
+    // ------------------------------------------------------------------------------------------------------------------------------- //
+
+
+
+    // function showFirtsMessage(msg) {
+    //     alert(msg);
+    // }
+
+    // showFirtsMessage('Превет');
+
+    // function calc(a, b) {
+    //     return (a + b);
+    // }
+
+
+
+
+    // let calc = (a, b) => (a + b);
+
+    // alert(calc(100, 200));
+
+    function detectDayBudget() {
+        appData.moneyPerDay = appData.budget / 30;
+        alert('Бюджет на день - ' + appData.moneyPerDay.toFixed(2));
     }
 
-    appData.moneyPerDay = appData.budget / 30;
 
-    alert('Бюджет на день - ' + appData.moneyPerDay);
+    function checkSavings() {
+        if (appData.saving) {
+            let save = +prompt('Какова сумма накоплений?');
+            let percent = +prompt('Под какой процент?');
 
-    if (appData.moneyPerDay < 100) {
-        console.log('Нищеброд 80 лвл');        
-    } else if ((appData.moneyPerDay > 100) && (appData.moneyPerDay < 200)) {
-        console.log('Россиянец');
-    } else {
-        console.log('Буржуй');        
-    };
+            appData.monthIncome = save / 100 / 12 * percent;
+            alert('Доход в месяц с вашего депозита ' + appData.monthIncome.toFixed(2));
+        }
+    }
 
-    console.log(appData);
+    function detectLevel() {
+        if (appData.moneyPerDay < 100) {
+            console.log('Нищеброд 80 лвл');
+        } else if ((appData.moneyPerDay > 100) && (appData.moneyPerDay < 200)) {
+            console.log('Россиянец');
+        } else {
+            console.log('Буржуй');
+        }
+    }
+
+    function chooseOptExpenses() {
+        for (let i = 1; i < 4; i++) {
+            let answer = prompt('Статья необязательных расходов?');
+
+            appData.optionalExpenses[i] = answer;
+        }
+    }
+
+    checkSavings();
+    detectDayBudget();
+    detectLevel();
+    chooseOptExpenses();
+
+
+    console.log(appData.optionalExpenses);
     
 
+    
 
-
-
-
-    // alert('Статья расходов - ' + appData.expenses.a);
-    // alert('Будет стоить - ' + appData.expenses.b);
 
 };
 
