@@ -1,56 +1,7 @@
 window.onload = function () {
 
-    // 'use strict';
-
-    // let dude = {
-    //     name: 'xxx',
-    //     age: 30,
-    //     isDumbass: true,
-    // };
-
-    // console.log(dude.name);
-
-    // let arr = ['xxx.png', 'yyy.png', 'sss.jpeg'];
-
-    // console.log(arr[1]); 
-
-    // let div = document.querySelector('.new');
-    // let click = document.querySelector('.click');
-
-
-    // click.addEventListener('mouseover', function() {
-    //     div.innerHTML = 'XXX';
-    // });
-
-    // click.addEventListener('mouseout', function() {
-    //     div.innerHTML = 'YYY';
-    // });
-
-
-
-    // let num = 50;
-
-    // if (num < 49) {
-    //     alert('No!');
-    // } else if (num > 100) {
-    //     alert('Too mach');
-    // } else {
-    //     alert('YEEEEEEEEE');
-    // }
-
-    // (num < 55) ? alert('No!') : alert('YEEEEEEEEE');
-
-
-    // -------------------------------------------------------------------------------------------------------------------- //
-
-
-
-
-
-
     let money = +prompt('Ваш бюджет на месяц?');
     let time = prompt('Введите дату в формате YYYY-MM-DD');
-    let value;
 
     let appData = {
         budget: money,
@@ -102,12 +53,7 @@ window.onload = function () {
         chooseIncome: function() {
             let items = prompt('Что принесет дополнительный доход? (перечислите через запятую)'); 
 
-            console.log(typeof items);
-            
-
-            // if (items != string || items === '' || items === null) {
-            //     alert('Не верные данные');
-            // }
+            console.log(typeof items);            
 
             this.income = items.split(', ');
         },
@@ -121,88 +67,6 @@ window.onload = function () {
 
     appData.chooseIncome();
     appData.kindOfIncome();
-
-    console.log(appData.income);
-
-    
-    
-
-    // checkSavings();
-    // detectDayBudget();
-    // detectLevel();
-    // chooseOptExpenses();
-
-
-    // console.log(appData.optionalExpenses);
-
-
-  
-    // let first = function() {
-    //     alert(1);
-    // };
-
-    // function saySomething(callback) {
-    //     setTimeout(function() {
-    //         alert(2);
-    //     }, 5000);
-
-    //     callback();
-    // }   
-
-    // saySomething(first);
-
-
-    
-
-    // let options = {
-    //     width: 1024,
-    //     height: 1024,
-    //     name: 'test',
-    // };
-
-
-    // console.log(options.name);
-
-    // options.bool = true;
-    // options.colors = {
-    //     border: 'black',
-    //     background: 'red',
-    // }
-
-    // let func = function(item) {
-    //     alert(item * 10);
-    // }
-    
-    // let arr = [1, 2, 3, 4, 5];
-
-    // arr.forEach(func);
-
-    // let answer = prompt();
-
-    // let arr = [];
-
-    // arr = answer.split(',');
-
-    // console.log(arr);
-
-    // let sol = {
-    //     health: 400,
-    //     armor: 100,
-    // }
-
-    // let one = {
-    //     health: 100,
-    // }
-
-    // one.__proto__ = sol;
-
-    // console.log(one);
-    
-    
-  
-    
-    
-
 
 };
 
