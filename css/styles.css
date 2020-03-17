@@ -2,6 +2,17 @@
     font-size: 20px;
 }
 
+#box {
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+}
+
+.green {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+}
 
 .click {
     color: brown;
